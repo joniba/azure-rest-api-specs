@@ -1,0 +1,731 @@
+{
+  "swagger": "2.0",
+  "info": {
+      "title": "Security Insights",
+      "description": "API spec for Microsoft.SecurityInsights (Azure Security Insights) resource provider",
+      "version": "2024-05-01-preview"
+  },
+  "paths": {
+      "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/collaborativeAggregations/{collaborativeAggregationName}": {
+          "put": {
+              "tags": [
+                  "CollaborativeAggregationApiService"
+              ],
+              "operationId": "PutCollaborativeAggregation",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "parameters": [
+                  {
+                      "$ref": "#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "in": "path",
+                      "name": "workspaceName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "path",
+                      "name": "collaborativeAggregationName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "header",
+                      "name": "x-ms-client-workspace-id",
+                      "type": "string",
+                      "format": "uuid"
+                  },
+                  {
+                      "in": "header",
+                      "name": "x-ms-client-object-id",
+                      "type": "string",
+                      "format": "uuid"
+                  },
+                  {
+                      "$ref": "#/parameters/ApiVersionParameter"
+                  },
+                  {
+                      "in": "body",
+                      "name": "collaborativeAggregationToUpsert",
+                      "schema": {
+                          "$ref": "#/definitions/CollaborativeAggregationArmModelArmObjectWrapper"
+                      }
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "OK",
+                      "schema": {
+                          "$ref": "#/definitions/CollaborativeAggregationArmModelArmObjectWrapper"
+                      }
+                  },
+                  "201": {
+                      "description": "Created",
+                      "schema": {
+                          "$ref": "#/definitions/CollaborativeAggregationArmModelArmObjectWrapper"
+                      }
+                  }
+              }
+          },
+          "get": {
+              "tags": [
+                  "CollaborativeAggregationApiService"
+              ],
+              "operationId": "GetCollaborativeAggregation",
+              "produces": [
+                  "application/json"
+              ],
+              "parameters": [
+                  {
+                      "$ref": "#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "in": "path",
+                      "name": "workspaceName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "path",
+                      "name": "collaborativeAggregationName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "header",
+                      "name": "x-ms-client-workspace-id",
+                      "type": "string",
+                      "format": "uuid"
+                  },
+                  {
+                      "$ref": "#/parameters/ApiVersionParameter"
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "OK",
+                      "schema": {
+                          "$ref": "#/definitions/CollaborativeAggregationArmModelArmObjectWrapper"
+                      }
+                  }
+              }
+          },
+          "delete": {
+              "tags": [
+                  "CollaborativeAggregationApiService"
+              ],
+              "operationId": "DeleteCollaborativeAggregation",
+              "parameters": [
+                  {
+                      "$ref": "#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "in": "path",
+                      "name": "workspaceName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "path",
+                      "name": "collaborativeAggregationName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "header",
+                      "name": "x-ms-client-workspace-id",
+                      "type": "string",
+                      "format": "uuid"
+                  },
+                  {
+                      "$ref": "#/parameters/ApiVersionParameter"
+                  }
+              ],
+              "responses": {
+                  "202": {
+                      "description": "Accepted"
+                  },
+                  "204": {
+                      "description": "NoContent"
+                  }
+              }
+          }
+      },
+      "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/collaborativeAggregations": {
+          "get": {
+              "tags": [
+                  "CollaborativeAggregationApiService"
+              ],
+              "operationId": "GetAllCollaborativeAggregations",
+              "produces": [
+                  "application/json"
+              ],
+              "parameters": [
+                  {
+                      "$ref": "#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "in": "path",
+                      "name": "workspaceName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "header",
+                      "name": "x-ms-client-workspace-id",
+                      "type": "string",
+                      "format": "uuid"
+                  },
+                  {
+                      "$ref": "#/parameters/ApiVersionParameter"
+                  },
+                  {
+                      "in": "query",
+                      "name": "$filter",
+                      "description": "Filter the results using OData syntax.",
+                      "type": "string"
+                  },
+                  {
+                      "in": "query",
+                      "name": "$orderby",
+                      "description": "Order the results using OData syntax.",
+                      "type": "string"
+                  },
+                  {
+                      "in": "query",
+                      "name": "$skipToken",
+                      "description": "The continuation token for scorlling the items",
+                      "type": "string"
+                  },
+                  {
+                      "in": "query",
+                      "name": "$top",
+                      "description": "Returns only the first n results. Optional.",
+                      "type": "integer",
+                      "format": "int32",
+                      "x-ms-parameter-location": "method"
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "OK",
+                      "schema": {
+                          "$ref": "#/definitions/CollaborativeAggregationArmModelArmObjectWrapper"
+                      }
+                  }
+              }
+          }
+      },
+      "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/collaborativeAggregationSources/{collaborativeAggregationSourceName}": {
+          "patch": {
+              "tags": [
+                  "CollaborativeAggregationSourceApiService"
+              ],
+              "operationId": "PatchCollaborativeAggregationSource",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "parameters": [
+                  {
+                      "$ref": "#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "in": "path",
+                      "name": "workspaceName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "path",
+                      "name": "collaborativeAggregationSourceName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "header",
+                      "name": "x-ms-client-workspace-id",
+                      "type": "string",
+                      "format": "uuid"
+                  },
+                  {
+                      "in": "header",
+                      "name": "x-ms-client-object-id",
+                      "type": "string",
+                      "format": "uuid"
+                  },
+                  {
+                      "$ref": "#/parameters/ApiVersionParameter"
+                  },
+                  {
+                      "in": "body",
+                      "name": "collaborativeAggregationSourceToUpsert",
+                      "schema": {
+                          "$ref": "#/definitions/CollaborativeAggregationSourceArmModelArmObjectWrapper"
+                      }
+                  }
+              ],
+              "responses": {
+                  "202": {
+                      "description": "Accepted",
+                      "schema": {
+                          "$ref": "#/definitions/CollaborativeAggregationSourceArmModelArmObjectWrapper"
+                      }
+                  }
+              }
+          },
+          "get": {
+              "tags": [
+                  "CollaborativeAggregationSourceApiService"
+              ],
+              "operationId": "GetCollaborativeAggregationSource",
+              "produces": [
+                  "application/json"
+              ],
+              "parameters": [
+                  {
+                      "$ref": "#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "in": "path",
+                      "name": "workspaceName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "path",
+                      "name": "collaborativeAggregationSourceName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "header",
+                      "name": "x-ms-client-workspace-id",
+                      "type": "string",
+                      "format": "uuid"
+                  },
+                  {
+                      "$ref": "#/parameters/ApiVersionParameter"
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "OK",
+                      "schema": {
+                          "$ref": "#/definitions/CollaborativeAggregationSourceArmModelArmObjectWrapper"
+                      }
+                  }
+              }
+          },
+          "delete": {
+              "tags": [
+                  "CollaborativeAggregationSourceApiService"
+              ],
+              "operationId": "DeleteCollaborativeAggregationSource",
+              "parameters": [
+                  {
+                      "$ref": "#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "in": "path",
+                      "name": "workspaceName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "path",
+                      "name": "collaborativeAggregationSourceName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "header",
+                      "name": "x-ms-client-workspace-id",
+                      "type": "string",
+                      "format": "uuid"
+                  },
+                  {
+                      "$ref": "#/parameters/ApiVersionParameter"
+                  }
+              ],
+              "responses": {
+                  "202": {
+                      "description": "Accepted"
+                  },
+                  "204": {
+                      "description": "NoContent"
+                  }
+              }
+          }
+      },
+      "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/collaborativeAggregationSources": {
+          "get": {
+              "tags": [
+                  "CollaborativeAggregationSourceApiService"
+              ],
+              "operationId": "GetAllCollaborativeAggregationSources",
+              "produces": [
+                  "application/json"
+              ],
+              "parameters": [
+                  {
+                      "$ref": "#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "in": "path",
+                      "name": "workspaceName",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "header",
+                      "name": "x-ms-client-workspace-id",
+                      "type": "string",
+                      "format": "uuid"
+                  },
+                  {
+                      "$ref": "#/parameters/ApiVersionParameter"
+                  },
+                  {
+                      "in": "query",
+                      "name": "$filter",
+                      "description": "Filter the results using OData syntax.",
+                      "type": "string"
+                  },
+                  {
+                      "in": "query",
+                      "name": "$orderby",
+                      "description": "Order the results using OData syntax.",
+                      "type": "string"
+                  },
+                  {
+                      "in": "query",
+                      "name": "$skipToken",
+                      "description": "The continuation token for scorlling the items",
+                      "type": "string"
+                  },
+                  {
+                      "in": "query",
+                      "name": "$top",
+                      "description": "Returns only the first n results. Optional.",
+                      "type": "integer",
+                      "format": "int32",
+                      "x-ms-parameter-location": "method"
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "OK",
+                      "schema": {
+                          "$ref": "#/definitions/CollaborativeAggregationSourceArmModelArmObjectWrapper"
+                      }
+                  }
+              }
+          }
+      }
+  },
+  "definitions": {
+      "ApprovalStatusArmType": {
+          "enum": [
+              "Pending",
+              "Approved",
+              "Rejected",
+              "Revoked"
+          ],
+          "type": "string",
+          "example": "Pending",
+          "x-ms-enum": {
+              "name": "ApprovalStatusArmType",
+              "modelAsString": true,
+              "values": [
+                  {
+                      "value": "Pending"
+                  },
+                  {
+                      "value": "Approved"
+                  },
+                  {
+                      "value": "Rejected"
+                  },
+                  {
+                      "value": "Revoked"
+                  }
+              ]
+          }
+      },
+      "CollaborativeAggregationArmModel": {
+          "required": [
+              "sourcePartnershipInformation"
+          ],
+          "type": "object",
+          "properties": {
+              "displayName": {
+                  "type": "string"
+              },
+              "description": {
+                  "type": "string"
+              },
+              "sourcePartnershipInformation": {
+                  "$ref": "#/definitions/CollaboratorPartnershipInformationArmModel"
+              },
+              "dataSourceType": {
+                  "$ref": "#/definitions/DataSourceArmType"
+              },
+              "aggregationFilters": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/FilterConditionBaseArmModel"
+                  }
+              },
+              "isEnabled": {
+                  "type": "boolean"
+              },
+              "approvalStatus": {
+                  "readOnly": true,
+                  "$ref": "#/definitions/ApprovalStatusArmType"
+              }
+          }
+      },
+      "CollaborativeAggregationArmModelArmObjectWrapper": {
+          "required": [
+              "properties"
+          ],
+          "type": "object",
+          "properties": {
+              "id": {
+                  "type": "string"
+              },
+              "name": {
+                  "type": "string"
+              },
+              "etag": {
+                  "type": "string"
+              },
+              "type": {
+                  "type": "string"
+              },
+              "kind": {
+                  "type": "string"
+              },
+              "systemData": {
+                  "$ref": "#/definitions/SystemData"
+              },
+              "tags": {
+                  "type": "object",
+                  "additionalProperties": {
+                      "type": "string"
+                  }
+              },
+              "properties": {
+                  "$ref": "#/definitions/CollaborativeAggregationArmModel",
+                  "x-ms-client-flatten": true
+              }
+          }
+      },
+      "CollaborativeAggregationSourceArmModel": {
+          "type": "object",
+          "properties": {
+              "displayName": {
+                  "type": "string"
+              },
+              "description": {
+                  "type": "string"
+              },
+              "approvalStatus": {
+                  "$ref": "#/definitions/ApprovalStatusArmType"
+              },
+              "targetPartnershipInformation": {
+                  "readOnly": true,
+                  "$ref": "#/definitions/CollaboratorPartnershipInformationArmModel"
+              },
+              "dataSourceType": {
+                  "readOnly": true,
+                  "$ref": "#/definitions/DataSourceArmType"
+              }
+          }
+      },
+      "CollaborativeAggregationSourceArmModelArmObjectWrapper": {
+          "required": [
+              "properties"
+          ],
+          "type": "object",
+          "properties": {
+              "id": {
+                  "type": "string"
+              },
+              "name": {
+                  "type": "string"
+              },
+              "etag": {
+                  "type": "string"
+              },
+              "type": {
+                  "type": "string"
+              },
+              "kind": {
+                  "type": "string"
+              },
+              "systemData": {
+                  "$ref": "#/definitions/SystemData"
+              },
+              "tags": {
+                  "type": "object",
+                  "additionalProperties": {
+                      "type": "string"
+                  }
+              },
+              "properties": {
+                  "$ref": "#/definitions/CollaborativeAggregationSourceArmModel",
+                  "x-ms-client-flatten": true
+              }
+          }
+      },
+      "CollaboratorPartnershipInformationArmModel": {
+          "required": [
+              "id"
+          ],
+          "type": "object",
+          "properties": {
+              "id": {
+                  "minLength": 1,
+                  "type": "string"
+              },
+              "displayName": {
+                  "type": "string",
+                  "readOnly": true
+              }
+          }
+      },
+      "DataSourceArmType": {
+          "enum": [
+              "SecurityAlertsTable"
+          ],
+          "type": "string",
+          "example": "SecurityAlertsTable",
+          "x-ms-enum": {
+              "name": "DataSourceArmType",
+              "modelAsString": true,
+              "values": [
+                  {
+                      "value": "SecurityAlertsTable"
+                  }
+              ]
+          }
+      },
+      "FilterConditionArmType": {
+          "enum": [
+              "Property"
+          ],
+          "type": "string",
+          "example": "Property",
+          "x-ms-enum": {
+              "name": "FilterConditionArmType",
+              "modelAsString": true,
+              "values": [
+                  {
+                      "value": "Property"
+                  }
+              ]
+          }
+      },
+      "FilterConditionBaseArmModel": {
+          "type": "object",
+          "properties": {
+              "conditionType": {
+                  "$ref": "#/definitions/FilterConditionArmType"
+              }
+          }
+      },
+      "SystemData": {
+          "type": "object",
+          "properties": {
+              "createdAt": {
+                  "format": "date-time",
+                  "type": "string"
+              },
+              "createdBy": {
+                  "type": "string"
+              },
+              "createdByType": {
+                  "type": "string"
+              },
+              "lastModifiedAt": {
+                  "format": "date-time",
+                  "type": "string"
+              },
+              "lastModifiedBy": {
+                  "type": "string"
+              },
+              "lastModifiedByType": {
+                  "type": "string"
+              }
+          }
+      }
+  },
+  "parameters": {
+      "SubscriptionIdParameter": {
+          "in": "path",
+          "name": "subscriptionId",
+          "description": "The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).",
+          "required": true,
+          "type": "string",
+          "minLength": 1
+      },
+      "ResourceGroupNameParameter": {
+          "in": "path",
+          "name": "resourceGroupName",
+          "description": "The name of the resource group. The name is case insensitive.",
+          "required": true,
+          "type": "string",
+          "maxLength": 90,
+          "minLength": 1,
+          "pattern": "^[-\\w\\._\\(\\)]+$",
+          "x-ms-parameter-location": "method"
+      },
+      "ApiVersionParameter": {
+          "in": "query",
+          "name": "api-version",
+          "description": "The API version to be used with the HTTP request.",
+          "required": true,
+          "type": "string",
+          "minLength": 1
+      }
+  },
+  "produces": [
+      "application/json"
+  ],
+  "consumes": [
+      "application/json"
+  ]
+}
