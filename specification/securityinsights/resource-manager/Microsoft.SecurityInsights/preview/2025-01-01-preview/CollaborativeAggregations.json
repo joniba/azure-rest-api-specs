@@ -9,8 +9,9 @@
       "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/collaborativeAggregations/{collaborativeAggregationName}": {
           "put": {
               "tags": [
-                  "CollaborativeAggregationApiService"
+                  "collaborativeAggregations"
               ],
+              "description": "Upserts Collaborative Aggregation",
               "operationId": "PutCollaborativeAggregation",
               "consumes": [
                   "application/json"
@@ -77,8 +78,9 @@
           },
           "get": {
               "tags": [
-                  "CollaborativeAggregationApiService"
+                  "collaborativeAggregations"
               ],
+              "description": "Gets Collaborative Aggregation by name.",
               "operationId": "GetCollaborativeAggregation",
               "produces": [
                   "application/json"
@@ -123,8 +125,9 @@
           },
           "delete": {
               "tags": [
-                  "CollaborativeAggregationApiService"
+                  "collaborativeAggregations"
               ],
+              "description": "Delete Collaborative Aggregation",
               "operationId": "DeleteCollaborativeAggregation",
               "parameters": [
                   {
@@ -168,8 +171,9 @@
       "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/collaborativeAggregations": {
           "get": {
               "tags": [
-                  "CollaborativeAggregationApiService"
+                  "collaborativeAggregations"
               ],
+              "description": "Gets all Collaborative Aggregations",
               "operationId": "GetAllCollaborativeAggregations",
               "produces": [
                   "application/json"
@@ -236,8 +240,9 @@
       "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/collaborativeAggregationSources/{collaborativeAggregationSourceName}": {
           "patch": {
               "tags": [
-                  "CollaborativeAggregationSourceApiService"
+                  "collaborativeAggregationSources"
               ],
+              "description": "Patch Collaborative Aggregation Source",
               "operationId": "PatchCollaborativeAggregationSource",
               "consumes": [
                   "application/json"
@@ -298,8 +303,9 @@
           },
           "get": {
               "tags": [
-                  "CollaborativeAggregationSourceApiService"
+                  "collaborativeAggregationSources"
               ],
+              "description": "Get Collaborative Aggregation Source by name",
               "operationId": "GetCollaborativeAggregationSource",
               "produces": [
                   "application/json"
@@ -344,8 +350,9 @@
           },
           "delete": {
               "tags": [
-                  "CollaborativeAggregationSourceApiService"
+                  "collaborativeAggregationSources"
               ],
+              "description": "Delete Collaborative Aggregation Source",
               "operationId": "DeleteCollaborativeAggregationSource",
               "parameters": [
                   {
@@ -389,8 +396,9 @@
       "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/collaborativeAggregationSources": {
           "get": {
               "tags": [
-                  "CollaborativeAggregationSourceApiService"
+                  "collaborativeAggregationSources"
               ],
+              "description": "Get all Collaborative Aggregation Sources",
               "operationId": "GetAllCollaborativeAggregationSources",
               "produces": [
                   "application/json"
