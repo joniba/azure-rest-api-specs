@@ -21,16 +21,13 @@
               ],
               "parameters": [
                   {
-                      "$ref": "#/parameters/SubscriptionIdParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
                   },
                   {
-                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
                   },
                   {
-                      "in": "path",
-                      "name": "workspaceName",
-                      "required": true,
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
                   },
                   {
                       "in": "path",
@@ -51,7 +48,7 @@
                       "format": "uuid"
                   },
                   {
-                      "$ref": "#/parameters/ApiVersionParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
                   },
                   {
                       "in": "body",
@@ -73,6 +70,12 @@
                       "schema": {
                           "$ref": "#/definitions/CollaborativeAggregationArmModelArmObjectWrapper"
                       }
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                      }
                   }
               }
           },
@@ -87,16 +90,13 @@
               ],
               "parameters": [
                   {
-                      "$ref": "#/parameters/SubscriptionIdParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
                   },
                   {
-                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
                   },
                   {
-                      "in": "path",
-                      "name": "workspaceName",
-                      "required": true,
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
                   },
                   {
                       "in": "path",
@@ -111,7 +111,7 @@
                       "format": "uuid"
                   },
                   {
-                      "$ref": "#/parameters/ApiVersionParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
                   }
               ],
               "responses": {
@@ -119,6 +119,12 @@
                       "description": "OK",
                       "schema": {
                           "$ref": "#/definitions/CollaborativeAggregationArmModelArmObjectWrapper"
+                      }
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
                       }
                   }
               }
@@ -129,18 +135,18 @@
               ],
               "description": "Delete Collaborative Aggregation",
               "operationId": "DeleteCollaborativeAggregation",
+              "produces": [
+                  "application/json"
+              ],
               "parameters": [
                   {
-                      "$ref": "#/parameters/SubscriptionIdParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
                   },
                   {
-                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
                   },
                   {
-                      "in": "path",
-                      "name": "workspaceName",
-                      "required": true,
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
                   },
                   {
                       "in": "path",
@@ -155,7 +161,7 @@
                       "format": "uuid"
                   },
                   {
-                      "$ref": "#/parameters/ApiVersionParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
                   }
               ],
               "responses": {
@@ -164,6 +170,12 @@
                   },
                   "204": {
                       "description": "NoContent"
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                      }
                   }
               }
           }
@@ -180,16 +192,13 @@
               ],
               "parameters": [
                   {
-                      "$ref": "#/parameters/SubscriptionIdParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
                   },
                   {
-                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
                   },
                   {
-                      "in": "path",
-                      "name": "workspaceName",
-                      "required": true,
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
                   },
                   {
                       "in": "header",
@@ -198,33 +207,19 @@
                       "format": "uuid"
                   },
                   {
-                      "$ref": "#/parameters/ApiVersionParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
                   },
                   {
-                      "in": "query",
-                      "name": "$filter",
-                      "description": "Filter the results using OData syntax.",
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/ODataFilter"
                   },
                   {
-                      "in": "query",
-                      "name": "$orderby",
-                      "description": "Order the results using OData syntax.",
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/ODataOrderBy"
                   },
                   {
-                      "in": "query",
-                      "name": "$skipToken",
-                      "description": "The continuation token for scorlling the items",
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/ODataSkipToken"
                   },
                   {
-                      "in": "query",
-                      "name": "$top",
-                      "description": "Returns only the first n results. Optional.",
-                      "type": "integer",
-                      "format": "int32",
-                      "x-ms-parameter-location": "method"
+                      "$ref": "../../../common/2.0/types.json#/parameters/ODataTop"
                   }
               ],
               "responses": {
@@ -232,6 +227,12 @@
                       "description": "OK",
                       "schema": {
                           "$ref": "#/definitions/CollaborativeAggregationArmModelArmObjectWrapper"
+                      }
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
                       }
                   }
               }
@@ -252,16 +253,13 @@
               ],
               "parameters": [
                   {
-                      "$ref": "#/parameters/SubscriptionIdParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
                   },
                   {
-                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
                   },
                   {
-                      "in": "path",
-                      "name": "workspaceName",
-                      "required": true,
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
                   },
                   {
                       "in": "path",
@@ -282,7 +280,7 @@
                       "format": "uuid"
                   },
                   {
-                      "$ref": "#/parameters/ApiVersionParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
                   },
                   {
                       "in": "body",
@@ -298,6 +296,12 @@
                       "schema": {
                           "$ref": "#/definitions/CollaborativeAggregationSourceArmModelArmObjectWrapper"
                       }
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                      }
                   }
               }
           },
@@ -312,16 +316,13 @@
               ],
               "parameters": [
                   {
-                      "$ref": "#/parameters/SubscriptionIdParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
                   },
                   {
-                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
                   },
                   {
-                      "in": "path",
-                      "name": "workspaceName",
-                      "required": true,
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
                   },
                   {
                       "in": "path",
@@ -336,7 +337,7 @@
                       "format": "uuid"
                   },
                   {
-                      "$ref": "#/parameters/ApiVersionParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
                   }
               ],
               "responses": {
@@ -344,6 +345,12 @@
                       "description": "OK",
                       "schema": {
                           "$ref": "#/definitions/CollaborativeAggregationSourceArmModelArmObjectWrapper"
+                      }
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
                       }
                   }
               }
@@ -354,18 +361,18 @@
               ],
               "description": "Delete Collaborative Aggregation Source",
               "operationId": "DeleteCollaborativeAggregationSource",
+              "produces": [
+                  "application/json"
+              ],
               "parameters": [
                   {
-                      "$ref": "#/parameters/SubscriptionIdParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
                   },
                   {
-                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
                   },
                   {
-                      "in": "path",
-                      "name": "workspaceName",
-                      "required": true,
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
                   },
                   {
                       "in": "path",
@@ -380,7 +387,7 @@
                       "format": "uuid"
                   },
                   {
-                      "$ref": "#/parameters/ApiVersionParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
                   }
               ],
               "responses": {
@@ -389,6 +396,12 @@
                   },
                   "204": {
                       "description": "NoContent"
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                      }
                   }
               }
           }
@@ -405,16 +418,13 @@
               ],
               "parameters": [
                   {
-                      "$ref": "#/parameters/SubscriptionIdParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
                   },
                   {
-                      "$ref": "#/parameters/ResourceGroupNameParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
                   },
                   {
-                      "in": "path",
-                      "name": "workspaceName",
-                      "required": true,
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
                   },
                   {
                       "in": "header",
@@ -423,33 +433,19 @@
                       "format": "uuid"
                   },
                   {
-                      "$ref": "#/parameters/ApiVersionParameter"
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
                   },
                   {
-                      "in": "query",
-                      "name": "$filter",
-                      "description": "Filter the results using OData syntax.",
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/ODataFilter"
                   },
                   {
-                      "in": "query",
-                      "name": "$orderby",
-                      "description": "Order the results using OData syntax.",
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/ODataOrderBy"
                   },
                   {
-                      "in": "query",
-                      "name": "$skipToken",
-                      "description": "The continuation token for scorlling the items",
-                      "type": "string"
+                      "$ref": "../../../common/2.0/types.json#/parameters/ODataSkipToken"
                   },
                   {
-                      "in": "query",
-                      "name": "$top",
-                      "description": "Returns only the first n results. Optional.",
-                      "type": "integer",
-                      "format": "int32",
-                      "x-ms-parameter-location": "method"
+                      "$ref": "../../../common/2.0/types.json#/parameters/ODataTop"
                   }
               ],
               "responses": {
@@ -457,6 +453,12 @@
                       "description": "OK",
                       "schema": {
                           "$ref": "#/definitions/CollaborativeAggregationSourceArmModelArmObjectWrapper"
+                      }
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
                       }
                   }
               }
@@ -520,6 +522,7 @@
                   "type": "boolean"
               },
               "approvalStatus": {
+                  "type": "object",
                   "readOnly": true,
                   "$ref": "#/definitions/ApprovalStatusArmType"
               }
@@ -530,32 +533,14 @@
               "properties"
           ],
           "type": "object",
+          "allOf": [
+              {
+                  "$ref": "../../../common/2.0/types.json#/definitions/ResourceWithEtag"
+              }
+          ],
           "properties": {
-              "id": {
-                  "type": "string"
-              },
-              "name": {
-                  "type": "string"
-              },
-              "etag": {
-                  "type": "string"
-              },
-              "type": {
-                  "type": "string"
-              },
-              "kind": {
-                  "type": "string"
-              },
-              "systemData": {
-                  "$ref": "#/definitions/SystemData"
-              },
-              "tags": {
-                  "type": "object",
-                  "additionalProperties": {
-                      "type": "string"
-                  }
-              },
               "properties": {
+                  "type": "object",
                   "$ref": "#/definitions/CollaborativeAggregationArmModel",
                   "x-ms-client-flatten": true
               }
@@ -574,10 +559,12 @@
                   "$ref": "#/definitions/ApprovalStatusArmType"
               },
               "targetPartnershipInformation": {
+                  "type": "object",
                   "readOnly": true,
                   "$ref": "#/definitions/CollaboratorPartnershipInformationArmModel"
               },
               "dataSourceType": {
+                  "type": "object",
                   "readOnly": true,
                   "$ref": "#/definitions/DataSourceArmType"
               }
@@ -588,32 +575,14 @@
               "properties"
           ],
           "type": "object",
+          "allOf": [
+              {
+                  "$ref": "../../../common/2.0/types.json#/definitions/ResourceWithEtag"
+              }
+          ],
           "properties": {
-              "id": {
-                  "type": "string"
-              },
-              "name": {
-                  "type": "string"
-              },
-              "etag": {
-                  "type": "string"
-              },
-              "type": {
-                  "type": "string"
-              },
-              "kind": {
-                  "type": "string"
-              },
-              "systemData": {
-                  "$ref": "#/definitions/SystemData"
-              },
-              "tags": {
-                  "type": "object",
-                  "additionalProperties": {
-                      "type": "string"
-                  }
-              },
               "properties": {
+                  "type": "object",
                   "$ref": "#/definitions/CollaborativeAggregationSourceArmModel",
                   "x-ms-client-flatten": true
               }
@@ -674,62 +643,30 @@
                   "$ref": "#/definitions/FilterConditionArmType"
               }
           }
-      },
-      "SystemData": {
-          "type": "object",
-          "properties": {
-              "createdAt": {
-                  "format": "date-time",
-                  "type": "string"
-              },
-              "createdBy": {
-                  "type": "string"
-              },
-              "createdByType": {
-                  "type": "string"
-              },
-              "lastModifiedAt": {
-                  "format": "date-time",
-                  "type": "string"
-              },
-              "lastModifiedBy": {
-                  "type": "string"
-              },
-              "lastModifiedByType": {
-                  "type": "string"
-              }
-          }
       }
   },
-  "parameters": {
-      "SubscriptionIdParameter": {
-          "in": "path",
-          "name": "subscriptionId",
-          "description": "The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).",
-          "required": true,
-          "type": "string",
-          "minLength": 1
-      },
-      "ResourceGroupNameParameter": {
-          "in": "path",
-          "name": "resourceGroupName",
-          "description": "The name of the resource group. The name is case insensitive.",
-          "required": true,
-          "type": "string",
-          "maxLength": 90,
-          "minLength": 1,
-          "pattern": "^[-\\w\\._\\(\\)]+$",
-          "x-ms-parameter-location": "method"
-      },
-      "ApiVersionParameter": {
-          "in": "query",
-          "name": "api-version",
-          "description": "The API version to be used with the HTTP request.",
-          "required": true,
-          "type": "string",
-          "minLength": 1
+  "securityDefinitions": {
+      "azure_auth": {
+          "type": "oauth2",
+          "flow": "implicit",
+          "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+          "scopes": {
+              "user_impersonation": "impersonate your user account"
+          },
+          "description": "Azure Active Directory OAuth2 Flow"
       }
   },
+  "security": [
+      {
+          "azure_auth": [
+              "user_impersonation"
+          ]
+      }
+  ],
+  "host": "management.azure.com",
+  "schemes": [
+      "https"
+  ],
   "produces": [
       "application/json"
   ],
