@@ -5,6 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "PowerShell Launch AutoGenerateClientLibrariesLocal",
+      "type": "PowerShell",
+      "request": "launch",
+      "script": "${workspaceFolder}/AutoGenerateClientLibrariesLocal.ps1",
+      "cwd": "${cwd}",
+      "args": [
+        "-ApiVersionTag", "package-preview-2025-01", "-Branch", "release-securityinsights-Microsoft.SecurityInsights-2025-01-01-preview-Collaboration"
+      ],
+    },
+    {
       "type": "node",
       "request": "launch",
       "name": "Mocha Tests",
