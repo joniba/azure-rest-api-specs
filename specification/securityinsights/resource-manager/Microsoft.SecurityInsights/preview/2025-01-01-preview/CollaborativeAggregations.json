@@ -3,7 +3,7 @@
   "info": {
       "title": "Security Insights",
       "description": "API spec for Microsoft.SecurityInsights (Azure Security Insights) resource provider",
-      "version": "2024-05-01-preview"
+      "version": "2025-01-01-preview"
   },
   "paths": {
       "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/collaborativeAggregations/{collaborativeAggregationName}": {
@@ -77,6 +77,11 @@
                           "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
                       }
                   }
+              },
+              "x-ms-examples": {
+                  "PutCollaborativeAggregation": {
+                      "$ref": "./examples/collaborativeAggregations/PutCollaborativeAggregation.json"
+                  }
               }
           },
           "get": {
@@ -126,6 +131,11 @@
                       "schema": {
                           "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
                       }
+                  }
+              },
+              "x-ms-examples": {
+                  "GetCollaborativeAggregation": {
+                      "$ref": "./examples/collaborativeAggregations/GetCollaborativeAggregation.json"
                   }
               }
           },
@@ -177,6 +187,11 @@
                           "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
                       }
                   }
+              },
+              "x-ms-examples": {
+                  "DeleteCollaborativeAggregation": {
+                      "$ref": "./examples/collaborativeAggregations/DeleteCollaborativeAggregation.json"
+                  }
               }
           }
       },
@@ -226,7 +241,7 @@
                   "200": {
                       "description": "OK",
                       "schema": {
-                          "$ref": "#/definitions/CollaborativeAggregationArmModelArmObjectWrapper"
+                          "$ref": "#/definitions/CollaborativeAggregationArmModelArmCollectionWrapper"
                       }
                   },
                   "default": {
@@ -234,6 +249,11 @@
                       "schema": {
                           "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
                       }
+                  }
+              },
+              "x-ms-examples": {
+                  "GetAllCollaborativeAggregations": {
+                      "$ref": "./examples/collaborativeAggregations/GetAllCollaborativeAggregations.json"
                   }
               }
           }
@@ -452,7 +472,7 @@
                   "200": {
                       "description": "OK",
                       "schema": {
-                          "$ref": "#/definitions/CollaborativeAggregationSourceArmModelArmObjectWrapper"
+                          "$ref": "#/definitions/CollaborativeAggregationSourceArmModelArmCollectionWrapper"
                       }
                   },
                   "default": {
@@ -528,6 +548,20 @@
               }
           }
       },
+      "CollaborativeAggregationArmModelArmCollectionWrapper": {
+          "type": "object",
+          "properties": {
+              "value": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/CollaborativeAggregationArmModelArmObjectWrapper"
+                  }
+              },
+              "nextLink": {
+                  "type": "string"
+              }
+          }
+      },
       "CollaborativeAggregationArmModelArmObjectWrapper": {
           "required": [
               "properties"
@@ -567,6 +601,20 @@
                   "type": "object",
                   "readOnly": true,
                   "$ref": "#/definitions/DataSourceArmType"
+              }
+          }
+      },
+      "CollaborativeAggregationSourceArmModelArmCollectionWrapper": {
+          "type": "object",
+          "properties": {
+              "value": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/CollaborativeAggregationSourceArmModelArmObjectWrapper"
+                  }
+              },
+              "nextLink": {
+                  "type": "string"
               }
           }
       },

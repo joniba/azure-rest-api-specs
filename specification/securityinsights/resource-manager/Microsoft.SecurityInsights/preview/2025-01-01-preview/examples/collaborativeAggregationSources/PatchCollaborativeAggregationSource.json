@@ -1,0 +1,10 @@
+{
+  "parameters": {
+    "api-version": "2025-01-01-preview",
+    "subscriptionId": "d0cfe6b2-9ac0-4464-9919-dccaee2e4aaa",
+    "resourceGroupName": "myRg",
+    "workspaceName": "myWorkspace",
+    "collaborativeAggregationName": "my-collaborative-aggregation"
+  },
+  "responses": {}
+}

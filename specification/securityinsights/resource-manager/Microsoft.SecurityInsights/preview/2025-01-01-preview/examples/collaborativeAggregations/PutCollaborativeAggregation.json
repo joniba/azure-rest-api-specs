@@ -1,0 +1,45 @@
+{
+  "parameters": {
+    "api-version": "2025-01-01-preview",
+    "subscriptionId": "d0cfe6b2-9ac0-4464-9919-dccaee2e4aaa",
+    "resourceGroupName": "myRg",
+    "workspaceName": "myWorkspace",
+    "collaborativeAggregationName": "my-collaborative-aggregation",
+    "collaborativeAggregation": {
+      "id": "/subscriptions/d0cfe6b2-9ac0-4464-9919-dccaee2e4aaa/resourceGroups/myRg/providers/Microsoft.OperationalInsights/workspaces/myWorkspace/providers/Microsoft.SecurityInsights/collaborativeAggregations/73e01a99-5cd7-4139-a149-9f2736ff2aaa",
+      "name": "73e01a99-5cd7-4139-a149-9f2736ff2aaa",
+      "etag": "\"0300bf09-0000-0000-0000-5c37296e0aaa\"",
+      "type": "Microsoft.SecurityInsights/collaborativeAggregations",
+      "properties": {
+        "isEnabled": false,
+        "approvalStatus": "Pending"
+      }
+    }
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "id": "/subscriptions/d0cfe6b2-9ac0-4464-9919-dccaee2e4aaa/resourceGroups/myRg/providers/Microsoft.OperationalInsights/workspaces/myWorkspace/providers/Microsoft.SecurityInsights/collaborativeAggregations/73e01a99-5cd7-4139-a149-9f2736ff2aaa",
+        "name": "73e01a99-5cd7-4139-a149-9f2736ff2aaa",
+        "etag": "\"0300bf09-0000-0000-0000-5c37296e0aaa\"",
+        "type": "Microsoft.SecurityInsights/collaborativeAggregations",
+        "properties": {
+          "isEnabled": false,
+          "approvalStatus": "Pending"
+        }
+      }
+    },
+    "201": {
+      "body": {
+        "id": "/subscriptions/d0cfe6b2-9ac0-4464-9919-dccaee2e4aaa/resourceGroups/myRg/providers/Microsoft.OperationalInsights/workspaces/myWorkspace/providers/Microsoft.SecurityInsights/collaborativeAggregations/73e01a99-5cd7-4139-a149-9f2736ff2aaa",
+        "name": "73e01a99-5cd7-4139-a149-9f2736ff2aaa",
+        "etag": "\"0300bf09-0000-0000-0000-5c37296e0aaa\"",
+        "type": "Microsoft.SecurityInsights/collaborativeAggregations",
+        "properties": {
+          "isEnabled": false,
+          "approvalStatus": "Pending"
+        }
+      }
+    }
+  }
+}
