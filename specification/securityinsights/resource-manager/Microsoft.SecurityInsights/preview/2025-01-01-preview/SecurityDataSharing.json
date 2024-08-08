@@ -1,0 +1,668 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Security Insights",
+        "description": "API spec for Microsoft.SecurityInsights (Azure Security Insights) resource provider",
+        "version": "2024-05-01-preview"
+    },
+    "paths": {
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/securityDataSharingRules/{securityDataSharingRuleName}": {
+            "put": {
+                "tags": [
+                    "SecurityDataSharingRules"
+                ],
+                "operationId": "PutSecurityDataSharingRule",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                    },
+                    {
+                        "in": "path",
+                        "name": "securityDataSharingRuleName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-ms-client-workspace-id",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-ms-client-object-id",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "in": "body",
+                        "name": "securityDataSharingRuleToUpsert",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDataSharingRuleArmModelArmObjectWrapper"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDataSharingRuleArmModelArmObjectWrapper"
+                        }
+                    },
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDataSharingRuleArmModelArmObjectWrapper"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "SecurityDataSharingRules"
+                ],
+                "operationId": "GetSecurityDataSharingRule",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                    },
+                    {
+                        "in": "path",
+                        "name": "securityDataSharingRuleName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-ms-client-workspace-id",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDataSharingRuleArmModelArmObjectWrapper"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "SecurityDataSharingRules"
+                ],
+                "operationId": "DeleteSecurityDataSharingRule",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                    },
+                    {
+                        "in": "path",
+                        "name": "securityDataSharingRuleName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-ms-client-workspace-id",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Accepted"
+                    },
+                    "204": {
+                        "description": "NoContent"
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/securityDataSharingRules": {
+            "get": {
+                "tags": [
+                    "SecurityDataSharingRules"
+                ],
+                "operationId": "GetAllSecurityDataSharingRules",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-ms-client-workspace-id",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/ODataFilter"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/ODataOrderBy"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/ODataSkipToken"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/ODataTop"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDataSharingRuleArmModelArmObjectWrapper"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/securityDataSharingSources/{securityDataSharingSourceName}": {
+            "patch": {
+                "tags": [
+                    "SecurityDataSharingSources"
+                ],
+                "operationId": "PatchSecurityDataSharingSource",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                    },
+                    {
+                        "in": "path",
+                        "name": "securityDataSharingSourceName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-ms-client-workspace-id",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-ms-client-object-id",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "in": "body",
+                        "name": "securityDataSharingSourceToUpsert",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDataSharingSourceArmModelArmObjectWrapper"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Accepted",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDataSharingSourceArmModelArmObjectWrapper"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "SecurityDataSharingSources"
+                ],
+                "operationId": "GetSecurityDataSharingSource",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                    },
+                    {
+                        "in": "path",
+                        "name": "securityDataSharingSourceName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-ms-client-workspace-id",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDataSharingSourceArmModelArmObjectWrapper"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "SecurityDataSharingSources"
+                ],
+                "operationId": "DeleteSecurityDataSharingSource",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                    },
+                    {
+                        "in": "path",
+                        "name": "securityDataSharingSourceName",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-ms-client-workspace-id",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Accepted"
+                    },
+                    "204": {
+                        "description": "NoContent"
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                        }
+                    }
+                }
+            }
+        },
+        "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/securityDataSharingSources": {
+            "get": {
+                "tags": [
+                    "SecurityDataSharingSources"
+                ],
+                "operationId": "GetAllSecurityDataSharingSources",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                    },
+                    {
+                        "in": "header",
+                        "name": "x-ms-client-workspace-id",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    {
+                        "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/ODataFilter"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/ODataOrderBy"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/ODataSkipToken"
+                    },
+                    {
+                        "$ref": "../../../common/2.0/types.json#/parameters/ODataTop"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/SecurityDataSharingSourceArmModelArmObjectWrapper"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "ApprovalStatusArmType": {
+            "enum": [
+                "Pending",
+                "Approved",
+                "Rejected",
+                "Revoked"
+            ],
+            "type": "string",
+            "example": "Pending",
+            "x-ms-enum": {
+                "name": "ApprovalStatusArmType",
+                "modelAsString": true,
+                "values": [
+                    {
+                        "value": "Pending"
+                    },
+                    {
+                        "value": "Approved"
+                    },
+                    {
+                        "value": "Rejected"
+                    },
+                    {
+                        "value": "Revoked"
+                    }
+                ]
+            }
+        },
+        "CollaboratorPartnershipInformationArmModel": {
+            "required": [
+                "id"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        },
+        "DataSourceArmType": {
+            "enum": [
+                "SecurityAlertsTable"
+            ],
+            "type": "string",
+            "example": "SecurityAlertsTable",
+            "x-ms-enum": {
+                "name": "DataSourceArmType",
+                "modelAsString": true,
+                "values": [
+                    {
+                        "value": "SecurityAlertsTable"
+                    }
+                ]
+            }
+        },
+        "FilterConditionArmType": {
+            "enum": [
+                "Property"
+            ],
+            "type": "string",
+            "example": "Property",
+            "x-ms-enum": {
+                "name": "FilterConditionArmType",
+                "modelAsString": true,
+                "values": [
+                    {
+                        "value": "Property"
+                    }
+                ]
+            }
+        },
+        "FilterConditionBaseArmModel": {
+            "type": "object",
+            "properties": {
+                "conditionType": {
+                    "$ref": "#/definitions/FilterConditionArmType"
+                }
+            }
+        },
+        "SecurityDataSharingRuleArmModel": {
+            "required": [
+                "sourcePartnershipInformation"
+            ],
+            "type": "object",
+            "properties": {
+                "displayName": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "sourcePartnershipInformation": {
+                    "$ref": "#/definitions/CollaboratorPartnershipInformationArmModel"
+                },
+                "dataSourceType": {
+                    "$ref": "#/definitions/DataSourceArmType"
+                },
+                "securityDataFilters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FilterConditionBaseArmModel"
+                    }
+                },
+                "isEnabled": {
+                    "type": "boolean"
+                },
+                "approvalStatus": {
+                    "type": "object",
+                    "readOnly": true,
+                    "$ref": "#/definitions/ApprovalStatusArmType"
+                }
+            }
+        },
+        "SecurityDataSharingRuleArmModelArmObjectWrapper": {
+            "required": [
+                "properties"
+            ],
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "../../../common/2.0/types.json#/definitions/ResourceWithEtag"
+                }
+            ],
+            "properties": {
+                "properties": {
+                    "type": "object",
+                    "$ref": "#/definitions/SecurityDataSharingRuleArmModel",
+                    "x-ms-client-flatten": true
+                }
+            }
+        },
+        "SecurityDataSharingSourceArmModel": {
+            "type": "object",
+            "properties": {
+                "displayName": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "approvalStatus": {
+                    "$ref": "#/definitions/ApprovalStatusArmType"
+                },
+                "targetPartnershipInformation": {
+                    "type": "object",
+                    "readOnly": true,
+                    "$ref": "#/definitions/CollaboratorPartnershipInformationArmModel"
+                },
+                "dataSourceType": {
+                    "type": "object",
+                    "readOnly": true,
+                    "$ref": "#/definitions/DataSourceArmType"
+                }
+            }
+        },
+        "SecurityDataSharingSourceArmModelArmObjectWrapper": {
+            "required": [
+                "properties"
+            ],
+            "type": "object",
+            "allOf": [
+                {
+                    "$ref": "../../../common/2.0/types.json#/definitions/ResourceWithEtag"
+                }
+            ],
+            "properties": {
+                "properties": {
+                    "type": "object",
+                    "$ref": "#/definitions/SecurityDataSharingSourceArmModel",
+                    "x-ms-client-flatten": true
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "azure_auth": {
+            "type": "oauth2",
+            "flow": "implicit",
+            "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+            "scopes": {
+                "user_impersonation": "impersonate your user account"
+            },
+            "description": "Azure Active Directory OAuth2 Flow"
+        }
+    },
+    "security": [
+        {
+            "azure_auth": [
+                "user_impersonation"
+            ]
+        }
+    ],
+    "host": "management.azure.com",
+    "schemes": [
+        "https"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ]
+}
