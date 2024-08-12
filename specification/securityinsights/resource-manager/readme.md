@@ -38,22 +38,8 @@ These settings apply only when `--tag=package-preview-2025-01` is specified on t
 
 ```yaml $(tag) == 'package-preview-2025-01'
 input-file:
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/AlertRules.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/AutomationRules.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/Bookmarks.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/ContentPackages.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/ContentProductPackages.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/ContentProductTemplates.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/ContentTemplates.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/DataConnectors.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/Incidents.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/Metadata.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/OnboardingStates.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/operations.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/SecurityMLAnalyticsSettings.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/SourceControls.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/ThreatIntelligence.json
-  - Microsoft.SecurityInsights/preview/2025-01-01-preview/Watchlists.json
+  - Microsoft.SecurityInsights/preview/2025-01-01-preview/Partnerships.json
+  - Microsoft.SecurityInsights/preview/2025-01-01-preview/SecurityDataSharing.json
 ```
 
 ### Tag: package-2024-03
