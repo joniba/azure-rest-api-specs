@@ -1,0 +1,29 @@
+{
+  "parameters": {
+    "api-version": "2025-01-01-preview",
+    "subscriptionId": "d0cfe6b2-9ac0-4464-9919-dccaee2e48c0",
+    "resourceGroupName": "myRg",
+    "workspaceName": "myWorkspace",
+    "operationId": "5a35959e-1db1-49fd-a39c-88505805281b"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "id": "/subscriptions/d0cfe6b2-9ac0-4464-9919-dccaee2e48c0/resourceGroups/myRg/providers/Microsoft.OperationalInsights/workspaces/myWorkspace/providers/Microsoft.SecurityInsights/partnerships/15acddfc-ab1a-43af-8158-349c774b0f88/operations/5a35959e-1db1-49fd-a39c-88505805281b",
+        "name": "5a35959e-1db1-49fd-a39c-88505805281b",
+        "etag": "\"0300bf09-0000-0000-0000-5c37296e0aaa\"",
+        "type": "Microsoft.SecurityInsights/partnerships/operations",
+        "tags": {
+          "key1": "value1",
+          "key2": "value2"
+        },
+        "properties": {
+          "startTime": "2024-01-01T00:00:00+00:00",
+          "endTime": "2024-01-01T01:00:00+00:00",
+          "status": "Succeeded",
+          "error": ""
+        }
+      }
+    }
+  }
+}

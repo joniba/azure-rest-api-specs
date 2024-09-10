@@ -1,0 +1,16 @@
+{
+  "parameters": {
+    "api-version": "2025-01-01-preview",
+    "subscriptionId": "d0cfe6b2-9ac0-4464-9919-dccaee2e48c0",
+    "resourceGroupName": "myRg",
+    "workspaceName": "myWorkspace",
+    "partnershipName": "15acddfc-ab1a-43af-8158-349c774b0f88"
+  },
+  "responses": {
+    "202": {
+      "headers": {
+        "Location": "https://management.azure.com/subscriptions/d0cfe6b2-9ac0-4464-9919-dccaee2e48c0/resourceGroups/myRg/providers/Microsoft.OperationalInsights/workspaces/myWorkspace/providers/Microsoft.SecurityInsights/partnershipOperations/5a35959e-1db1-49fd-a39c-88505805281b"
+      }
+    }
+  }
+}

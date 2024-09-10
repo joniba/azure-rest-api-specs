@@ -1,0 +1,76 @@
+{
+  "parameters": {
+    "api-version": "2025-01-01-preview",
+    "subscriptionId": "d0cfe6b2-9ac0-4464-9919-dccaee2e48c0",
+    "resourceGroupName": "myRg",
+    "workspaceName": "myWorkspace",
+    "partnershipName": "15acddfc-ab1a-43af-8158-349c774b0f88",
+    "partnershipArmToUpsert": {
+      "properties": {
+        "displayName": "Example Partnership",
+        "description": "Example partnership between two Contoso and Fabrikam",
+        "notificationMethod": {
+          "email": "user@contoso.com",
+          "partnerName": "Contoso"
+        },
+        "condition": {
+          "workspaceId": "e839b17f-ace3-46f4-a980-f3dcb4646377",
+          "tenantId": "00000000-0000-0000-0000-000000000000"
+        },
+        "invitationToken": "V1|1c8cf302-4286-467f-aac8-790a13a90914|eus"
+      }
+    }
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "id": "/subscriptions/d0cfe6b2-9ac0-4464-9919-dccaee2e48c0/resourceGroups/myRg/providers/Microsoft.OperationalInsights/workspaces/myWorkspace/providers/Microsoft.SecurityInsights/partnerships/15acddfc-ab1a-43af-8158-349c774b0f88",
+        "name": "15acddfc-ab1a-43af-8158-349c774b0f88",
+        "etag": "\"0300bf09-0000-0000-0000-5c37296e0aaa\"",
+        "type": "Microsoft.SecurityInsights/partnerships",
+        "tags": {
+          "key1": "value1",
+          "key2": "value2"
+        },
+        "properties": {
+          "displayName": "Example Partnership",
+          "description": "Example partnership between two Contoso and Fabrikam",
+          "notificationMethod": {
+            "email": "user@contoso.com",
+            "partnerName": "Contoso"
+          },
+          "condition": {
+            "workspaceId": "e839b17f-ace3-46f4-a980-f3dcb4646377",
+            "tenantId": "00000000-0000-0000-0000-000000000000"
+          },
+          "invitationToken": "V1|1c8cf302-4286-467f-aac8-790a13a90914|eus"
+        }
+      }
+    },
+    "201": {
+      "body": {
+        "id": "/subscriptions/d0cfe6b2-9ac0-4464-9919-dccaee2e48c0/resourceGroups/myRg/providers/Microsoft.OperationalInsights/workspaces/myWorkspace/providers/Microsoft.SecurityInsights/partnerships/15acddfc-ab1a-43af-8158-349c774b0f88",
+        "name": "15acddfc-ab1a-43af-8158-349c774b0f88",
+        "etag": "\"0300bf09-0000-0000-0000-5c37296e0aaa\"",
+        "type": "Microsoft.SecurityInsights/partnerships",
+        "tags": {
+          "key1": "value1",
+          "key2": "value2"
+        },
+        "properties": {
+          "displayName": "Example Partnership",
+          "description": "Example partnership between two Contoso and Fabrikam",
+          "notificationMethod": {
+            "email": "user@contoso.com",
+            "partnerName": "Contoso"
+          },
+          "condition": {
+            "workspaceId": "e839b17f-ace3-46f4-a980-f3dcb4646377",
+            "tenantId": "00000000-0000-0000-0000-000000000000"
+          },
+          "invitationToken": "V1|1c8cf302-4286-467f-aac8-790a13a90914|eus"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,671 @@
+{
+  "swagger": "2.0",
+  "info": {
+      "title": "Security Insights",
+      "description": "API spec for Microsoft.SecurityInsights (Azure Security Insights) resource provider",
+      "version": "2025-01-01-preview"
+  },
+  "paths": {
+      "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/partnershipOperations/{operationId}": {
+          "get": {
+              "tags": [
+                  "partnershipOperations"
+              ],
+              "description": "Gets the partnership operation.",
+              "operationId": "PartnershipOperations_Get",
+              "produces": [
+                  "application/json"
+              ],
+              "parameters": [
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                  },
+                  {
+                      "$ref": "#/parameters/OperationId"
+                  },
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "Ok",
+                      "schema": {
+                          "$ref": "#/definitions/CollaborationOperation"
+                      }
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                      }
+                  }
+              },
+              "x-ms-examples": {
+                  "PartnershipOperations_Get": {
+                      "$ref": "./examples/partnershipOperations/PartnershipOperations_Get.json"
+                  }
+              }
+          }
+      },
+      "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/partnerships/{partnershipName}": {
+          "get": {
+              "tags": [
+                  "partnerships"
+              ],
+              "description": "Gets the partnership.",
+              "operationId": "Partnerships_Get",
+              "produces": [
+                  "application/json"
+              ],
+              "parameters": [
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                  },
+                  {
+                      "$ref": "#/parameters/PartnershipName"
+                  },
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "OK",
+                      "schema": {
+                          "$ref": "#/definitions/Partnership"
+                      }
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                      }
+                  }
+              },
+              "x-ms-examples": {
+                  "Partnerships_Get": {
+                      "$ref": "./examples/partnerships/Partnerships_Get.json"
+                  }
+              }
+          },
+          "put": {
+              "tags": [
+                  "partnerships"
+              ],
+              "description": "Creates or updates a partnership.",
+              "operationId": "Partnerships_CreateOrUpdate",
+              "consumes": [
+                  "application/json"
+              ],
+              "produces": [
+                  "application/json"
+              ],
+              "parameters": [
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                  },
+                  {
+                      "$ref": "#/parameters/PartnershipName"
+                  },
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                  },
+                  {
+                      "in": "body",
+                      "name": "partnershipArmToUpsert",
+                      "description": "the partnership model",
+                      "schema": {
+                          "$ref": "#/definitions/Partnership"
+                      }
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "OK",
+                      "schema": {
+                          "$ref": "#/definitions/Partnership"
+                      }
+                  },
+                  "201": {
+                      "description": "Created",
+                      "schema": {
+                          "$ref": "#/definitions/Partnership"
+                      }
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                      }
+                  }
+              },
+              "x-ms-examples": {
+                  "Partnerships_CreateOrUpdate": {
+                      "$ref": "./examples/partnerships/Partnerships_CreateOrUpdate.json"
+                  }
+              }
+          },
+          "delete": {
+              "tags": [
+                  "partnerships"
+              ],
+              "description": "Deletes the partnership.",
+              "operationId": "Partnerships_Delete",
+              "produces": [
+                  "application/json"
+              ],
+              "parameters": [
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                  },
+                  {
+                      "$ref": "#/parameters/PartnershipName"
+                  },
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                  }
+              ],
+              "responses": {
+                  "202": {
+                      "description": "Accepted",
+                      "headers": {
+                          "Location": {
+                              "description": "The URI to poll for status updates.",
+                              "type": "string"
+                          }
+                      }
+                  },
+                  "204": {
+                      "description": "NoContent"
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                      }
+                  }
+              },
+              "x-ms-long-running-operation": true,
+              "x-ms-long-running-operation-options": {
+                  "final-state-via": "location"
+              },
+              "x-ms-examples": {
+                  "Partnerships_Delete": {
+                      "$ref": "./examples/partnerships/Partnerships_Delete.json"
+                  }
+              }
+          }
+      },
+      "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/partnerships": {
+          "get": {
+              "tags": [
+                  "partnerships"
+              ],
+              "description": "Lists all partnerships segmentally.",
+              "operationId": "Partnerships_List",
+              "produces": [
+                  "application/json"
+              ],
+              "parameters": [
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                  },
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                  },
+                  {
+                      "$ref": "../../../common/2.0/types.json#/parameters/ODataFilter"
+                  },
+                  {
+                      "$ref": "../../../common/2.0/types.json#/parameters/ODataOrderBy"
+                  },
+                  {
+                      "$ref": "../../../common/2.0/types.json#/parameters/ODataSkipToken"
+                  },
+                  {
+                      "$ref": "../../../common/2.0/types.json#/parameters/ODataTop"
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "OK",
+                      "schema": {
+                          "$ref": "#/definitions/PartnershipList"
+                      }
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                      }
+                  }
+              },
+              "x-ms-pageable": {
+                  "nextLinkName": "nextLink"
+              },
+              "x-ms-examples": {
+                  "Partnerships_List": {
+                      "$ref": "./examples/partnerships/Partnerships_List.json"
+                  }
+              }
+          }
+      },
+      "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/providers/Microsoft.SecurityInsights/partnerships/{partnershipName}/revoke": {
+          "post": {
+              "tags": [
+                  "partnerships"
+              ],
+              "description": "Revokes the partnership.",
+              "operationId": "Partnerships_Revoke",
+              "produces": [
+                  "application/json"
+              ],
+              "parameters": [
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/SubscriptionIdParameter"
+                  },
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ResourceGroupNameParameter"
+                  },
+                  {
+                      "$ref": "../../../common/2.0/types.json#/parameters/WorkspaceName"
+                  },
+                  {
+                      "$ref": "#/parameters/PartnershipName"
+                  },
+                  {
+                      "$ref": "../../../../../common-types/resource-management/v3/types.json#/parameters/ApiVersionParameter"
+                  }
+              ],
+              "responses": {
+                  "202": {
+                      "description": "Accepted",
+                      "headers": {
+                          "Location": {
+                              "description": "The URI to poll for status updates.",
+                              "type": "string"
+                          }
+                      }
+                  },
+                  "default": {
+                      "description": "Error response describing why the operation failed.",
+                      "schema": {
+                          "$ref": "../../../common/2.0/types.json#/definitions/CloudError"
+                      }
+                  }
+              },
+              "x-ms-long-running-operation": true,
+              "x-ms-long-running-operation-options": {
+                  "final-state-via": "location"
+              },
+              "x-ms-examples": {
+                  "Partnerships_Revoke": {
+                      "$ref": "./examples/partnerships/Partnerships_Revoke.json"
+                  }
+              }
+          }
+      }
+  },
+  "definitions": {
+      "CollaborationOperation": {
+          "required": [
+              "properties"
+          ],
+          "type": "object",
+          "allOf": [
+              {
+                  "$ref": "../../../common/2.0/types.json#/definitions/ResourceWithEtag"
+              }
+          ],
+          "properties": {
+              "properties": {
+                  "type": "object",
+                  "$ref": "#/definitions/CollaborationOperationProperties",
+                  "x-ms-client-flatten": true
+              }
+          }
+      },
+      "CollaborationOperationProperties": {
+          "required": [
+              "status"
+          ],
+          "type": "object",
+          "properties": {
+              "startTime": {
+                  "format": "date-time",
+                  "type": "string"
+              },
+              "endTime": {
+                  "format": "date-time",
+                  "type": "string"
+              },
+              "status": {
+                  "$ref": "#/definitions/CollaborationOperationStatus"
+              },
+              "error": {
+                  "type": "string"
+              }
+          }
+      },
+      "CollaborationOperationStatus": {
+          "enum": [
+              "Accepted",
+              "InProgress",
+              "TransientFailure",
+              "Succeeded",
+              "Failed",
+              "Canceled"
+          ],
+          "type": "string",
+          "example": "Accepted",
+          "x-ms-enum": {
+              "name": "CollaborationOperationStatus",
+              "modelAsString": true,
+              "values": [
+                  {
+                      "value": "Accepted"
+                  },
+                  {
+                      "value": "InProgress"
+                  },
+                  {
+                      "value": "TransientFailure"
+                  },
+                  {
+                      "value": "Succeeded"
+                  },
+                  {
+                      "value": "Failed"
+                  },
+                  {
+                      "value": "Canceled"
+                  }
+              ]
+          }
+      },
+      "Partnership": {
+          "required": [
+              "properties"
+          ],
+          "type": "object",
+          "allOf": [
+              {
+                  "$ref": "../../../common/2.0/types.json#/definitions/ResourceWithEtag"
+              }
+          ],
+          "properties": {
+              "properties": {
+                  "type": "object",
+                  "$ref": "#/definitions/PartnershipProperties",
+                  "x-ms-client-flatten": true
+              }
+          }
+      },
+      "PartnershipCondition": {
+          "type": "object",
+          "properties": {
+              "workspaceId": {
+                  "type": "string"
+              },
+              "tenantId": {
+                  "type": "string"
+              }
+          }
+      },
+      "PartnershipKindType": {
+          "enum": [
+              "Inviter",
+              "Invitee"
+          ],
+          "type": "string",
+          "readOnly": true,
+          "example": "Inviter",
+          "x-ms-enum": {
+              "name": "PartnershipKindType",
+              "modelAsString": true,
+              "values": [
+                  {
+                      "value": "Inviter"
+                  },
+                  {
+                      "value": "Invitee"
+                  }
+              ]
+          }
+      },
+      "PartnershipList": {
+          "type": "object",
+          "properties": {
+              "value": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/Partnership"
+                  }
+              },
+              "nextLink": {
+                  "type": "string"
+              }
+          }
+      },
+      "PartnershipNotificationMethod": {
+          "required": [
+              "email",
+              "partnerName"
+          ],
+          "type": "object",
+          "properties": {
+              "email": {
+                  "minLength": 1,
+                  "type": "string"
+              },
+              "partnerName": {
+                  "minLength": 1,
+                  "type": "string"
+              }
+          }
+      },
+      "PartnershipProperties": {
+          "required": [
+              "displayName"
+          ],
+          "type": "object",
+          "properties": {
+              "displayName": {
+                  "minLength": 1,
+                  "type": "string"
+              },
+              "description": {
+                  "type": "string"
+              },
+              "notificationMethod": {
+                  "$ref": "#/definitions/PartnershipNotificationMethod"
+              },
+              "condition": {
+                  "$ref": "#/definitions/PartnershipCondition"
+              },
+              "invitationToken": {
+                  "type": "string"
+              },
+              "state": {
+                  "type": "object",
+                  "readOnly": true,
+                  "$ref": "#/definitions/PartnershipStateType"
+              },
+              "partnershipId": {
+                  "type": "string",
+                  "readOnly": true
+              },
+              "partnershipKind": {
+                  "type": "object",
+                  "readOnly": true,
+                  "$ref": "#/definitions/PartnershipKindType"
+              },
+              "provisioningState": {
+                  "type": "object",
+                  "readOnly": true,
+                  "$ref": "#/definitions/ProvisioningStateType"
+              }
+          }
+      },
+      "PartnershipStateType": {
+          "enum": [
+              "Pending",
+              "Accepted",
+              "Revoked",
+              "Revoking"
+          ],
+          "type": "string",
+          "readOnly": true,
+          "example": "Pending",
+          "x-ms-enum": {
+              "name": "PartnershipStateType",
+              "modelAsString": true,
+              "values": [
+                  {
+                      "value": "Pending"
+                  },
+                  {
+                      "value": "Accepted"
+                  },
+                  {
+                      "value": "Revoked"
+                  },
+                  {
+                      "value": "Revoking"
+                  }
+              ]
+          }
+      },
+      "ProvisioningStateType": {
+          "enum": [
+              "Succeeded",
+              "Creating",
+              "Updating",
+              "Deleting",
+              "Failed"
+          ],
+          "type": "string",
+          "readOnly": true,
+          "example": "Succeeded",
+          "x-ms-enum": {
+              "name": "ProvisioningStateType",
+              "modelAsString": true,
+              "values": [
+                  {
+                      "value": "Succeeded"
+                  },
+                  {
+                      "value": "Creating"
+                  },
+                  {
+                      "value": "Updating"
+                  },
+                  {
+                      "value": "Deleting"
+                  },
+                  {
+                      "value": "Failed"
+                  }
+              ]
+          }
+      }
+  },
+  "parameters": {
+      "Partnership": {
+          "name": "Partnership",
+          "description": "A partnership Between Two Collaborators ",
+          "required": true,
+          "in": "body",
+          "x-ms-parameter-location": "method",
+          "schema": {
+              "$ref": "#/definitions/Partnership"
+          }
+      },
+      "PartnershipOperation": {
+          "name": "PartnershipOperation",
+          "description": "The sample rule",
+          "required": true,
+          "in": "body",
+          "x-ms-parameter-location": "method",
+          "schema": {
+              "$ref": "#/definitions/CollaborationOperation"
+          }
+      },
+      "PartnershipName": {
+          "in": "path",
+          "name": "partnershipName",
+          "description": "the partnership ID",
+          "required": true,
+          "x-ms-parameter-location": "method",
+          "pattern": "^[a-z0-9-]*$",
+          "type": "string"
+      },
+      "OperationId": {
+          "in": "path",
+          "name": "operationId",
+          "description": "the partnership ID",
+          "required": true,
+          "x-ms-parameter-location": "method",
+          "type": "string"
+      }
+  },
+  "securityDefinitions": {
+      "azure_auth": {
+          "type": "oauth2",
+          "flow": "implicit",
+          "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+          "scopes": {
+              "user_impersonation": "impersonate your user account"
+          },
+          "description": "Azure Active Directory OAuth2 Flow"
+      }
+  },
+  "security": [
+      {
+          "azure_auth": [
+              "user_impersonation"
+          ]
+      }
+  ],
+  "host": "management.azure.com",
+  "schemes": [
+      "https"
+  ],
+  "produces": [
+      "application/json"
+  ],
+  "consumes": [
+      "application/json"
+  ]
+}
